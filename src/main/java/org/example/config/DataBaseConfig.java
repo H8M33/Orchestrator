@@ -58,7 +58,7 @@ public class DataBaseConfig {
         hibernateJpaVendorAdapter.setDatabase(Database.POSTGRESQL);
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(dataSource());
-        entityManagerFactory.setPackagesToScan("com.technokratos.model");
+        entityManagerFactory.setPackagesToScan("org.example.model");
         entityManagerFactory.setJpaVendorAdapter(hibernateJpaVendorAdapter);
         entityManagerFactory.setJpaProperties(hibernateProperties());
         return entityManagerFactory;
