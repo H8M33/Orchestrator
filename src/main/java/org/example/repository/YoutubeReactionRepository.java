@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface YoutubeReactionRepository extends JpaRepository<YoutubeReactionEntity, Long> {
 
-    Optional<YoutubeReactionEntity> findById(Long id);
+    Optional<YoutubeReactionEntity> findById(long id);
 }

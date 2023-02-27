@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface TelegramReactionRepository extends JpaRepository<TelegramReactionEntity, Long> {
 
-    Optional<TelegramReactionEntity> findById(Long id);
+    Optional<TelegramReactionEntity> findById(long id);
 }

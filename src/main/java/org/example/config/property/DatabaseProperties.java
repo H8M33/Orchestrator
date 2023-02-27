@@ -6,26 +6,23 @@ import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
 
-@ConfigurationProperties(prefix = "service-rabbit")
+@ConfigurationProperties(prefix = "db")
 @Validated
 @Data
-public class MyRabbitProperties {
-    @NotNull
-    private String exchangeReceiverName;
+public class DatabaseProperties {
 
     @NotNull
-    private String exchangeSenderName;
+    private String url;
 
     @NotNull
-    private String telegramRoutingKey;
+    private String username;
 
     @NotNull
-    private String vkRoutingKey;
+    private String password;
 
     @NotNull
-    private String youtubeRoutingKey;
+    private int poolSize;
 
     @NotNull
-    private String crawlerRoutingKey;
+    private String driverClassName;
 }
-

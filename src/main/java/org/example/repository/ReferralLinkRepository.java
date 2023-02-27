@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface ReferralLinkRepository extends JpaRepository<ReferralLinkEntity, Long> {
 
-    Optional<ReferralLinkEntity> findById(Long id);
+    Optional<ReferralLinkEntity> findById(long id);
 }

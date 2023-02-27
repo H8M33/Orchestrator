@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface VKReactionRepository extends JpaRepository<VKReactionEntity, Long> {
 
-    Optional<VKReactionEntity> findById(Long id);
+    Optional<VKReactionEntity> findById(long id);
 }
