@@ -24,5 +24,7 @@ public class MyRabbitProperties {
     @NotNull
     private String youtubeRoutingKey;
 
+    @NotNull
+    private String crawlerRoutingKey;
 }
 
