@@ -13,7 +13,7 @@ public class TelegramListener {
 
     @RabbitListener(queues = {"${service-rabbit.telegram-routing-key}"}, ackMode = "AUTO")
     public void getMessage(TelegramMessage message){
-        log.info("Ну типо получил месседж от ТГ: {}", message);
+        log.info("TG: {}", message);
     }
 
 }

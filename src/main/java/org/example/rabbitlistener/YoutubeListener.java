@@ -13,6 +13,6 @@ public class YoutubeListener {
 
     @RabbitListener(queues = {"${service-rabbit.youtube-routing-key}"}, ackMode = "AUTO")
     public void getMessage(VKMessage message){
-        log.info("Ну типо получил месседж от Ютубчика: {}", message);
+        log.info("Youtube: {}", message);
     }
 }

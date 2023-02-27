@@ -6,3 +6,4 @@ service-rabbit:
   telegram-routing-key: telegram
   youtube-routing-key: youtube
   exchange-sender-name: Sender
+  crawler-routing-key: Crawler

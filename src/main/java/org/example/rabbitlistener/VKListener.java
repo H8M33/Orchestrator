@@ -14,7 +14,7 @@ public class VKListener {
 
     @RabbitListener(queues = {"${service-rabbit.vk-routing-key}"}, ackMode = "AUTO")
     public void getMessage(VKMessage message){
-        log.info("Ну типо получил месседж от ВК: {}", message);
+        log.info("VK: {}", message);
     }
 
 }
