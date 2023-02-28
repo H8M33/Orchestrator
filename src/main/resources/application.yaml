@@ -6,7 +6,9 @@ service-rabbit:
   telegram-routing-key: telegram
   youtube-routing-key: youtube
   exchange-sender-name: Sender
-  crawler-routing-key: Crawler
+  telegram-crawler-queue-name: Crawler1
+  vk-crawler-queue-name: Crawler2
+  youtube-crawler-queue-name: Crawler3
 db:
   url: jdbc:postgresql://localhost:5432/AgonaSemester-db
   username: postgres

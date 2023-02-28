@@ -26,6 +26,7 @@ public class BaseRequestSenderService implements RequestSenderService{
     public void sendRequest() {
         template.convertAndSend(
                 properties.getExchangeSenderName(),
+                "all",
                 instant
         );
         instant = Instant.now();

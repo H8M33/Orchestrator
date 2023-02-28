@@ -22,7 +22,7 @@ public class SomeRabbitBeansConfig {
     @Bean
     public Exchange exchangeSender(){
         return ExchangeBuilder
-                .fanoutExchange(properties.getExchangeSenderName())
+                .directExchange(properties.getExchangeSenderName())
                 .build();
     }
 
@@ -99,7 +99,7 @@ public class SomeRabbitBeansConfig {
         return BindingBuilder
                 .bind(vkRequestQueue())
                 .to(exchangeSender())
-                .with(properties.getVkCrawlerQueueName())
+                .with("all")
                 .noargs();
     }
 
@@ -107,7 +107,7 @@ public class SomeRabbitBeansConfig {
         return BindingBuilder
                 .bind(telegramRequestQueue())
                 .to(exchangeSender())
-                .with(properties.getTelegramCrawlerQueueName())
+                .with("all")
                 .noargs();
     }
 
@@ -115,7 +115,7 @@ public class SomeRabbitBeansConfig {
         return BindingBuilder
                 .bind(youtubeRequestQueue())
                 .to(exchangeSender())
-                .with(properties.getYoutubeCrawlerQueueName())
+                .with("all")
                 .noargs();
     }
 

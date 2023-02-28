@@ -13,7 +13,6 @@ import java.time.Instant;
 public class ApplicationStarter {
 
     public static void main(String[] args) {
-        System.out.println(Instant.ofEpochMilli(1677342000000L));
         SpringApplication.run(ApplicationStarter.class, args);
     }
 

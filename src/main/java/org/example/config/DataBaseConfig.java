@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "org.example.model")
+@EnableJpaRepositories(basePackages = "org.example.repository")
 @RequiredArgsConstructor
 public class DataBaseConfig {
 
