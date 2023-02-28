@@ -22,7 +22,28 @@ public class SomeRabbitBeansConfig {
     @Bean
     public Exchange exchangeSender(){
         return ExchangeBuilder
-                .directExchange(properties.getExchangeSenderName())
+                .fanoutExchange(properties.getExchangeSenderName())
+                .build();
+    }
+
+    @Bean
+    public Queue vkRequestQueue(){
+        return QueueBuilder
+                .durable(properties.getVkCrawlerQueueName())
+                .build();
+    }
+
+    @Bean
+    public Queue telegramRequestQueue(){
+        return QueueBuilder
+                .durable(properties.getTelegramCrawlerQueueName())
+                .build();
+    }
+
+    @Bean
+    public Queue youtubeRequestQueue(){
+        return QueueBuilder
+                .durable(properties.getYoutubeCrawlerQueueName())
                 .build();
     }
 
@@ -71,6 +92,30 @@ public class SomeRabbitBeansConfig {
                 .bind(queueYoutube())
                 .to(exchangeReceiver())
                 .with(properties.getYoutubeRoutingKey())
+                .noargs();
+    }
+
+    @Bean Binding bindingVKRequest(){
+        return BindingBuilder
+                .bind(vkRequestQueue())
+                .to(exchangeSender())
+                .with(properties.getVkCrawlerQueueName())
+                .noargs();
+    }
+
+    @Bean Binding bindingTelegramRequest(){
+        return BindingBuilder
+                .bind(telegramRequestQueue())
+                .to(exchangeSender())
+                .with(properties.getTelegramCrawlerQueueName())
+                .noargs();
+    }
+
+    @Bean Binding bindingYoutubeRequest(){
+        return BindingBuilder
+                .bind(youtubeRequestQueue())
+                .to(exchangeSender())
+                .with(properties.getYoutubeCrawlerQueueName())
                 .noargs();
     }
 

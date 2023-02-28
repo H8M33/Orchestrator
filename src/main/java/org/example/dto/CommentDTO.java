@@ -1,4 +1,4 @@
-package org.example.dto.event;
+package org.example.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class VKMessage {
-    private String something;
+public class CommentDTO {
+
+    private String text;
 }

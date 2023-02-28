@@ -26,6 +26,12 @@ public class MyRabbitProperties {
     private String youtubeRoutingKey;
 
     @NotNull
-    private String crawlerRoutingKey;
+    private String vkCrawlerQueueName;
+
+    @NotNull
+    private String telegramCrawlerQueueName;
+
+    @NotNull
+    private String youtubeCrawlerQueueName;
 }
 

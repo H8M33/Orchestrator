@@ -13,3 +13,6 @@ db:
   password: postgres
   driver-classname: org.postgresql.Driver
   pool-size: 10
+spring:
+  rabbitmq:
+    host: localhost
