@@ -3,13 +3,17 @@ package org.example.rabbitlistener;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.dto.CommentDTO;
+import org.example.dto.MyPair;
 import org.example.dto.event.WebcrawlerMessage;
 import org.example.model.CommentsEntity;
 import org.example.model.PostEntity;
 import org.example.model.ReactionEntity;
+import org.example.model.ReferralLinkEntity;
 import org.example.service.*;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -21,6 +25,7 @@ public class YoutubeListener {
     CommentService commentService;
     ReactionService reactionService;
     ReferralLinkService referralLinkService;
+    WhoisService whoisService;
 
     @RabbitListener(queues = {"${service-rabbit.youtube-routing-key}"}, ackMode = "AUTO")
     public void getMessage(WebcrawlerMessage[] messageArray){
@@ -54,6 +59,18 @@ public class YoutubeListener {
                         .text(comment.getText())
                         .build());
             }
+
+            List<MyPair> list = whoisService.analyze(post.getText());
+
+            for (MyPair pair: list
+            ) {
+                referralLinkService.saveReferralLink(ReferralLinkEntity.builder()
+                        .company(pair.getDomain())
+                        .link(pair.getUrl())
+                        .post(post)
+                        .build());
+            }
+
         }
     }
 }
