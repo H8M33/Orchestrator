@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface ReactionRepository extends JpaRepository<ReactionEntity, Long> {
+public interface ReactionRepository extends JpaRepository<ReactionEntity, String> {
 
-    Optional<ReactionEntity> findById(long id);
+    Optional<ReactionEntity> findById(String id);
 }

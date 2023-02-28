@@ -18,8 +18,11 @@ public class ReactionEntity extends AbstractEntity{
     private String contentType;
 
     @Column(name = "content_id", nullable = false)
-    private Long contentId;
+    private String contentId;
 
-    @Column(name = "reaction_id", nullable = false)
+    @Column(name = "reaction_type", nullable = false)
     private Integer reactionId;
+
+    @Column(name = "count", nullable = false)
+    private Long count;
 }
