@@ -35,23 +35,9 @@ create table referral_links (
                                 foreign key (post_id) references posts
 );
 
-create table vk_reactions (
-                              id bigserial primary key,
-                              content_type content,
-                              content_id bigint,
-                              reaction_id int
-);
-
-create table youtube_reactions (
-                                   id bigserial primary key,
-                                   content_type content,
-                                   content_id bigint,
-                                   reaction_id int
-);
-
-create table telegram_reactions (
-                                    id bigserial primary key,
-                                    content_type content,
-                                    content_id bigint,
-                                    reaction_id int
+create table reactions (
+                           id bigserial primary key,
+                           content_type content,
+                           content_id bigint,
+                           reaction_id int
 );

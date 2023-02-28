@@ -6,13 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@Table(name = "vk_reactions")
+@Table(name = "reactions")
 @Entity
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class VKReactionEntity extends AbstractEntity{
+public class ReactionEntity extends AbstractEntity{
 
     @Column(name = "content_type", nullable = false)
     private String contentType;
