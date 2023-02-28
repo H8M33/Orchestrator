@@ -14,7 +14,8 @@ import java.time.Instant;
 @NoArgsConstructor
 public class WebcrawlerMessage {
     private Instant date;
-    private String url;
+    private String id;
+    private String owner_id;
     private String text;
     private long comment_count;
     private long view_count;

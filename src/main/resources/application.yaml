@@ -16,3 +16,10 @@ db:
 spring:
   rabbitmq:
     host: localhost
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/AgonaSemester-db
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+    password: postgres

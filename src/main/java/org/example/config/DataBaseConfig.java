@@ -2,6 +2,7 @@ package org.example.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import liquibase.integration.spring.SpringLiquibase;
 import lombok.RequiredArgsConstructor;
 import org.example.config.property.DatabaseProperties;
 import org.springframework.context.annotation.Bean;

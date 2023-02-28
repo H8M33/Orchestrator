@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 public class VKListener {
 
 
+
     @RabbitListener(queues = {"${service-rabbit.vk-routing-key}"}, ackMode = "AUTO")
     public void getMessage(WebcrawlerMessage[] messageArray){
         log.info("VK: {}", messageArray);
